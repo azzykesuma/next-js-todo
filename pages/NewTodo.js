@@ -45,6 +45,11 @@ const Newtodo = () => {
                 headers : {'Content-type' : 'application/json'},
                 body : JSON.stringify({act,priority,tags})
             })
+           .then(() => {
+               redirect : {
+                   destination : '/'
+               }
+           })
         }
     }
     return (
