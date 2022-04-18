@@ -16,3 +16,27 @@ h1,h2,h3,p {
 .margin {
   margin-top: 5em;
 }
+
+.deleteBtn {
+  color : #fff;
+}
+
+/* tags */
+.Routine {
+  background-color: #001E6C;
+  color: #FCD900;
+}
+
+.Self-care {
+  background-color: #ff9800;
+  color: #fff;
+}
+
+.Work {
+  background-color: #383838;
+  color : #F2F2F2;
+}
+
+.paperTags {
+  padding : 5px;
+}
