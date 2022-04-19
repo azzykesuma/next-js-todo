@@ -40,3 +40,15 @@ h1,h2,h3,p {
 .paperTags {
   padding : 5px;
 }
+
+#Self-care {
+  border : 1px solid green;
+}
+
+#Work {
+  border : 1px solid #383838;
+}
+
+#Routine {
+  border : 1px solid #001E6C;
+}

@@ -3,6 +3,7 @@ import { Typography } from "@mui/material"
 import Link from "next/link"
 import Box from '@mui/material/Box';
 import { Avatar, Paper } from '@mui/material/';
+import Button from '@mui/material/Button';
 // icons
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -20,6 +21,7 @@ export const getStaticProps = async () => {
 export default function Home({todos}) {
 
   const HandleDelete = async (id) => {
+    window.location.reload();
     await fetch('http://localhost:8000/acts/' + id , {
       method : 'DELETE'
     })
@@ -92,28 +94,22 @@ export default function Home({todos}) {
                 >
                   <Paper
                   className = 'paperTags'
+                  id = {item.tags}
                   >{item.tags}</Paper>
                   <Paper
                   className = 'paperTags'
+                  id = {item.priority}
                   >{item.priority}</Paper>
                 </Box>
-                <Box
-                sx = {{
-                  backgroundColor : '#B20600',
-                  borderRadius : '50%',
-                  padding : '5px',
-                  display : 'flex',
-                  alignItems : 'center',
-                  justifyContent : 'center'
-                }}
-                >
-                  <DeleteIcon
+
+                  <Button
+                  onClick={() => HandleDelete(item.id)}
                   className="deleteBtn"
                   cursor="pointer"
-                  onClick={() => HandleDelete(item.id)}
-                  />
+                  >
+                    <DeleteIcon/>
+                  </Button>
 
-                </Box>
               </Box>
             </div>
           ))
