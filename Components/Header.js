@@ -20,7 +20,6 @@ const Header = () => {
         }
     ]
 
-    // const color = red[50];
     return (
         <div className="header">
             <AppBar>
