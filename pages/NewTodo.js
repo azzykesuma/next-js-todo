@@ -1,12 +1,10 @@
 // react
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 // general
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { Container } from '@mui/material';
 // forms
-import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
@@ -45,11 +43,6 @@ const Newtodo = () => {
                 headers : {'Content-type' : 'application/json'},
                 body : JSON.stringify({act,priority,tags})
             })
-           .then(() => {
-               redirect : {
-                   destination : '/'
-               }
-           })
         }
     }
     return (
