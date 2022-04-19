@@ -1,6 +1,12 @@
 {
   "acts": [
     {
+      "act": "jogging",
+      "priority": "High",
+      "tags": "Routine",
+      "id": 2
+    },
+    {
       "act": "play",
       "priority": "Medium",
       "tags": "Self-care",

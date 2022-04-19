@@ -6,14 +6,16 @@ import { Avatar, Paper } from '@mui/material/';
 import Button from '@mui/material/Button';
 // icons
 import DeleteIcon from '@mui/icons-material/Delete';
+// html
+import Head from 'next/head';
 
-export const getStaticProps = async () => {
+
+export const getServerSideProps = async () => {
   const res = await fetch('http://localhost:8000/acts')
   const data = await res.json()
 
   return {
-    props : {todos : data},
-    revalidate : 1
+    props : {todos : data}
   }
 }
 
@@ -22,6 +24,7 @@ export default function Home({todos}) {
 
   const HandleDelete = async (id) => {
     window.location.reload();
+
     await fetch('http://localhost:8000/acts/' + id , {
       method : 'DELETE'
     })
@@ -34,6 +37,10 @@ export default function Home({todos}) {
 
   return (
     <>
+      <Head>
+        <title>Ninjas | Home</title>
+        <meta name="keywords" content="Ninjas" />
+      </Head>
       <Container>
         <div className="margin"></div>
         <Typography
