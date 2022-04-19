@@ -10,12 +10,12 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Head from 'next/head';
 
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context) => {
   const res = await fetch('http://localhost:8000/acts')
   const data = await res.json()
 
   return {
-    props : {todos : data}
+    props : {todos : { data }}
   }
 }
 
